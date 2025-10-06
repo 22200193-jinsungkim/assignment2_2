@@ -1,4 +1,30 @@
+@media screen and (max-width: 1024px) {
+    .colsize {
+        font-size: 10px;
+    }
 
-.ashjk{
-    ad
+    .rowheight {
+        height: 30px;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+    .colsize {
+        font-size: 7px;
+    }
+
+    .rowheight {
+        height: 20px;
+    }
+
+    button {
+        width: 80px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: normal;
+    }
 }

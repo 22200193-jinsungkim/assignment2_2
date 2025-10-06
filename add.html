@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>assignment2-2 주소록</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- cdn 링크 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        .header {
+            height: 70px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .colweight {
+            font-weight: bold;
+        }
+
+        .colsize {
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .textcenter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rowheight {
+            height: 40px;
+        }
+
+        button {
+            border-radius: 10%;
+            width: 120px;
+            height: 60px;
+            text-align: center;
+            line-height: 55px;
+            background-color: rgb(55, 123, 160);
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        form {
+
+            margin: 50px 200px;
+            padding: 30px;
+        }
+
+        input {
+            text-align: left;
+            align-items: center;
+        }
+
+        .buttondiv {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="my.css">
+</head>
+
+<body>
+
+    <div class="container-fluid bg-primary-subtle header textcenter">
+        신규추가
+    </div>
+    <div class="flex-column justify-content-center align-items-center">
+
+        <form>
+            <div class="form-group">
+                <label class="form-label">이 름</label>
+                <input type="text" id="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">관 계</label>
+                <input type="email" id="relationship" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">이메일</label>
+                <input type="email" id="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">전화번호</label>
+                <input type="tel" id="tel" class="form-control" placeholder="010-0000-0000">
+            </div>
+
+
+        </form>
+    </div>
+    <div class="buttondiv">
+        <button class="save-button" onclick="validateForm()">
+            확인
+        </button>
+        <button class="cancel-button" onclick="location.href='index.html'">
+            취소
+        </button>
+    </div>
+
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let relationship = document.getElementById("relationship").value;
+            let tel = document.getElementById("tel").value;
+
+            alert('전화번호가 추가됩니다');
+
+            if (name === "") {
+                alert("이름을 입력하세요.");
+                return false;
+            }
+            if (relationship === "") {
+                alert("관계를 입력하세요.");
+                return false;
+            }
+            if (email === "") {
+                alert("이메일을 입력하세요.");
+                return false;
+            }
+            if (!email.includes("@")) {
+                alert("올바른 이메일 주소를 입력하세요.");
+                return false;
+            }
+            if (tel === "") {
+                alert("전화번호를 입력하세요.");
+                return false;
+            }
+            if (tel.length != 11) {
+                alert("올바른 전화번호를 입력하세요.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
